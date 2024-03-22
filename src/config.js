@@ -24,7 +24,12 @@ const myschema=new mongoose.Schema({
     },
 });
 
-
+mongoose.connect(db,{
+    bufferCommands:false,
+    bufferTimeoutMS:10000,
+    useNewUrlParser:true,
+    useUnifiedTopology:true
+});
 
 const collection=new mongoose.model("user",myschema);
 module.exports=collection;
